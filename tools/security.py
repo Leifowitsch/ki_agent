@@ -5,8 +5,8 @@ def security_test(relativer_pfad: str, pflicht_pfad: str | None = None):
         pflicht_pfad = os.environ.get("PFLICHT_PFAD")
         
     echter_pfad = os.path.abspath(relativer_pfad)
-    im_ordner = os.path.commonpath([echter_pfad, pflicht_pfad])
-    sicher = im_ordner == pflicht_pfad
+    gleicher_pfad = os.path.commonpath([echter_pfad, pflicht_pfad])
+    sicher = gleicher_pfad == pflicht_pfad
     if sicher:
         return echter_pfad
     else:
